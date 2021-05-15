@@ -18,4 +18,4 @@ function newSummer(f){
 const sumOfSuquares = newSummer(x=>x*x);
 const sumOfCubes = newSummer(x => Math.pow(x,3));
 console.log(sumOfSuquares([1,2,3]));
-console.log(sumOfCubes([1,2,3]))
+console.log(sumOfCubes([1,2,3]));
