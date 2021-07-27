@@ -1,7 +1,7 @@
 {
   "name": "nodejs",
   "version": "1.0.0",
-  "description": "",
+  "description": "list : https://github.com/pannchat/runningjs/tree/master/public/es6 # 변수선언 let 변수명 const 상수변수명",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -25,6 +25,17 @@
     "eslint-plugin-react": "^7.16.0",
     "gulp": "^4.0.2",
     "gulp-babel": "^8.0.0",
-    "gulp-eslint": "^6.0.0"
-  }
+    "gulp-eslint": "^6.0.0",
+    "webpack": "^5.47.1",
+    "webpack-cli": "^4.7.2"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pannchat/runningjs.git"
+  },
+  "keywords": [],
+  "bugs": {
+    "url": "https://github.com/pannchat/runningjs/issues"
+  },
+  "homepage": "https://github.com/pannchat/runningjs#readme"
 }
