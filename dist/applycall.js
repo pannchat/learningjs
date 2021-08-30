@@ -1,3 +1,5 @@
+const { object } = require("underscore");
+
 function add(a,b,c){
     console.log(a+b+c);
 }
@@ -22,3 +24,14 @@ var person2 = {
 person.인사();
 person.인사.apply(person2,['param'])
 person.인사.call(person2,'param2')
+
+
+function 글자세기(strs){
+
+    let dict = new object;
+    [...strs].forEach(e=>{
+        dict[e] ? dict[e]++ : dict[e]=1
+    })
+    console.log(dict);
+}
+글자세기('aacbbb')
