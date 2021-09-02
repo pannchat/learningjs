@@ -1,5 +1,9 @@
-const App = () => {
-    
+import Items from "./components/Items.js"
+class App{
+    constructor(){
+        const $app = document.getElementById('app');
+        new Items($app);
+        console.log("test")
+    }
 }
-
-export default App;
+new App();
