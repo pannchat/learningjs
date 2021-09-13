@@ -36,7 +36,9 @@ module.exports={
         ]
     },
     plugins : [
-        new MiniCssExtractPlugin(),
+        new MiniCssExtractPlugin({
+            filename:'[hash].css'
+        }),
         new HtmlWebpackPlugin({
             title: 'Webpack',
             template: './template.hbs',

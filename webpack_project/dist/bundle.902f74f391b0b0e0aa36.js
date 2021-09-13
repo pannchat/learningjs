@@ -91,7 +91,7 @@ __webpack_require__.r(__webpack_exports__);
 
 function component(){
     const element = document.createElement('div');
-    element.innerHTML = 'Hello Webpack';
+    element.innerHTML = 'Hello Webpack!';
 
     console.log(_index_css__WEBPACK_IMPORTED_MODULE_1__.default);
     element.classList = _index_css__WEBPACK_IMPORTED_MODULE_1__.default.hellowebpack
