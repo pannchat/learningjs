@@ -16,12 +16,12 @@ module.exports={
                     {
                         loader: MiniCssExtractPlugin.loader
                     },
-                    {   
-                        loader : 'style-loader',
-                        options:{
-                            injectType : 'singletonStyleTag'
-                        }
-                    },
+                    // {   
+                    //     loader : 'style-loader',
+                    //     options:{
+                    //         injectType : 'singletonStyleTag'
+                    //     }
+                    // },
                     {
                         loader : 'css-loader',
                         options:{
