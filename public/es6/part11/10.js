@@ -21,15 +21,28 @@ class Countdown extends EventEmitter{
         }
     }
 
-    const c = new Countdown(5);
+    // const c = new Countdown(5);
 
-    c.on('tick',function(i){
-        if(i>0) console.log(i+'...');
+    // c.on('tick',function(i){
+    //     if(i>0) console.log(i+'...');
+    // });
+    // c.go()
+    // .then(function(){
+    //     console.log('Go!')
+    // })
+    // .catch(function(err){
+    //     console.error(err.message);
+    // })
+
+    const c = new Countdown(15, true)
+    .on('tick', function(i){
+        if(i>0) console.log(i + '...');
     });
+
     c.go()
     .then(function(){
-        console.log('Go!')
+        console.log('GO');
     })
     .catch(function(err){
-        console.error(err.message);
+        console.log(error(err.message))
     })
