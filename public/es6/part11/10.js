@@ -38,15 +38,38 @@ class Countdown extends EventEmitter{
     //     console.error(err.message);
     // })
 
-    const c = new Countdown(15, true)
-    .on('tick', function(i){
-        if(i>0) console.log(i + '...');
-    });
+    // const c = new Countdown(15, true)
+    // .on('tick', function(i){
+    //     if(i>0) console.log(i + '...');
+    // });
 
-    c.go()
-    .then(function(){
-        console.log('GO');
-    })
-    .catch(function(err){
-        console.log(error(err.message))
-    })
+    // c.go()
+    // .then(function(){
+    //     console.log('GO');
+    // })
+    // .catch(function(err){
+    //     console.log(error(err.message))
+    // })
+
+function launch(){
+        return new Promise(function(resolve, reject){
+            console.log("Lift off!");
+            setTimeout(function(){
+                resolve('In orbit!');
+    
+            }, 2 * 1000)
+        })
+    }
+    
+const c = new Countdown(5)
+.on('thick', i=> console.log(i + '...'));
+
+c.go()
+.then(launch)
+.then(function(msg){
+    console.log(msg)
+})
+.catch(function(err){
+    console.log(error('houston, we have a problem...'));
+})
+    
