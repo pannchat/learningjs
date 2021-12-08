@@ -1,75 +1,64 @@
-const EventEmitter = require('events').EventEmitter;
+let startTime = new Date();
+const map = new Map();
+const obj = {};
+const MAX = 5000000;
 
-class Countdown extends EventEmitter{
-    constructor(seconds, supersitious){
-        super();
-        this.seconds = seconds;
-        this.superstitious = !!this.superstitious;
-    }
-    go(){
-        const countdown = this;
-        const timeoutIds = [];
-        return new Promise(function(resolve, reject){
-            for(let i =countdown.seconds;i>=0;i--){
-                timeoutIds.push(setTimeout(function(){
-                    if(countdown.superstitious && i === 13){
-                        timeoutIds.forEach(clearTimeout);
-                        return reject(new Error('Oh my god'))
-                    }
-                    countdown.emit('tick', i);
-                    if(i===0) resolve();
+// console.time("num Map Set");
+// for(let i = 0; i < MAX; i++){
+//     map.set(i, `Participation number ${i}`);
+// }
+// console.timeEnd("num Map Set");
 
-                },(countdown.seconds-i)*1000));
-            }
-        })
-        }
-    }
+// console.time("num Object Set");
+// for(i = 0; i < MAX; i++){
+// 		obj[i] = `Participation number ${i}`;
+// }
+// console.timeEnd("num Object Set");
 
-    // const c = new Countdown(5);
 
-    // c.on('tick',function(i){
-    //     if(i>0) console.log(i+'...');
-    // });
-    // c.go()
-    // .then(function(){
-    //     console.log('Go!')
-    // })
-    // .catch(function(err){
-    //     console.error(err.message);
-    // })
+// console.time("num Map Get");
+// for(i = 0; i < MAX; i++){
+//     map.get(i);
+// }
+// console.timeEnd("num Map Get");
 
-    // const c = new Countdown(15, true)
-    // .on('tick', function(i){
-    //     if(i>0) console.log(i + '...');
-    // });
 
-    // c.go()
-    // .then(function(){
-    //     console.log('GO');
-    // })
-    // .catch(function(err){
-    //     console.log(error(err.message))
-    // })
 
-function launch(){
-        return new Promise(function(resolve, reject){
-            console.log("Lift off!");
-            setTimeout(function(){
-                resolve('In orbit!');
-    
-            }, 2 * 1000)
-        })
-    }
-    
-const c = new Countdown(5)
-.on('thick', i=> console.log(i + '...'));
+// console.time("num Object Get");
+// for(i = 0; i < MAX; i++){
+// 		obj[i];
+// }
+// console.timeEnd("num Object Get");
 
-c.go()
-.then(launch)
-.then(function(msg){
-    console.log(msg)
-})
-.catch(function(err){
-    console.log(error('houston, we have a problem...'));
-})
-    
+
+console.log();
+let startTime2 = new Date();
+const map2 = new Map();
+const obj2 = {};
+
+console.time("str Map Set");
+for(let i = 0; i < MAX; i++){
+    map2.set(`name${i}`, `Participation number ${i}`);
+}
+console.timeEnd("str Map Set");
+
+console.time("str Object Set");
+for(i = 0; i < MAX; i++){
+		obj2[`name${i}`] = `Participation number ${i}`;
+}
+console.timeEnd("str Object Set");
+
+console.time("str Map Get");
+for(i = 0; i < MAX; i++){
+    map2.get(`name${i}`);
+}
+console.timeEnd("str Map Get");
+
+
+
+console.time("str Object Get");
+for(i = 0; i < MAX; i++){
+		obj2[`name${i}`];
+}
+console.timeEnd("str Object Get");
+
